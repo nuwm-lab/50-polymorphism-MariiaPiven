@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -94,11 +94,6 @@ namespace LabWork
 
         public override string Describe() => "Трикутник";
 
-        // Constructors to initialize with a set of points
-        public Triangle() { }
-        public Triangle(IEnumerable<Point> points) => SetVertices(points);
-        public Triangle(params Point[] points) => SetVertices(points);
-
         protected override void ValidateAfterOrdering()
         {
             var a = Vertices[0];
@@ -118,11 +113,6 @@ namespace LabWork
         protected override int ExpectedVertexCount => 4;
 
         public override string Describe() => "Опуклий чотирикутник";
-
-        // Constructors to initialize with a set of points
-        public ConvexQuadrilateral() { }
-        public ConvexQuadrilateral(IEnumerable<Point> points) => SetVertices(points);
-        public ConvexQuadrilateral(params Point[] points) => SetVertices(points);
 
         protected override void ValidateAfterOrdering()
         {
@@ -179,9 +169,9 @@ namespace LabWork
         }
     }
 
-    public static class Program
+    internal static class Program
     {
-        public static void Main()
+        private static void Main()
         {
             // Поліморфне створення: користувач обирає фігуру в рантаймі
             Polygon shape;
@@ -222,3 +212,4 @@ namespace LabWork
         }
     }
 }
+
